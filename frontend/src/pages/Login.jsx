@@ -1,17 +1,16 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { MainLayout } from "../components/Layout"
-import { useFetchPost } from "../hooks/useFetch";
+const BK_URL = import.meta.env.VITE_BACKEND_URL;
 
 export const Login = () => {
     const [formdata, setFormData] = useState({mail:'',password:''});
-    //const {data, error, loading, refetch} = useFetchPost('http://localhost:4000/api/login', JSON.stringify(formdata));
     const [loading, setLoading] = useState(false);
     const handleSubmit = async (e)=> {
         e.preventDefault();
         setLoading(true);
         try {
-            let pet = await fetch('http://localhost:4000/api/login', {
+            let pet = await fetch(BK_URL+'/api/login', {
                 method:'POST', body: JSON.stringify(formdata),
                 headers: {'Content-Type':'application/json'},
                 credentials: 'include',

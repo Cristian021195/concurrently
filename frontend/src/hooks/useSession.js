@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+const BK_URL = import.meta.env.VITE_BACKEND_URL;
 
 export const useSession = () => {
     const [loginStatus, setLoginStatus] = useState(false);
     useEffect(()=>{
-        fetch('http://localhost:4000/api/session', {credentials: 'include'})
+        fetch(BK_URL+'/api/session', {credentials: 'include'})
         .then(res=>{
         if(res.status >= 200 && res.status < 300){
             setLoginStatus(true);

@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { MainLayout } from "../components/Layout"
 import { useNavigate } from "react-router-dom";
+const BK_URL = import.meta.env.VITE_BACKEND_URL;
 export const NewTask = () => {
   const [fData, setFdata] = useState({title:'Titulo', content:'Contenido...', category:'important'});
   const [loading, setLoading] = useState(false);
@@ -13,7 +14,7 @@ export const NewTask = () => {
     e.preventDefault();
     setLoading(true)
     try {
-      let pet = await fetch('http://localhost:4000/api/notas/', {
+      let pet = await fetch(BK_URL+'/api/notas/', {
         credentials:'include',
         method:'POST',
         body: JSON.stringify({...fData, category: categories}),

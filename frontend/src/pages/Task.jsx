@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { MainLayout } from "../components/Layout"
 import { useNavigate, useParams } from 'react-router-dom';
+const BK_URL = import.meta.env.VITE_BACKEND_URL;
 export const Task = () => {
   const params = useParams();
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ export const Task = () => {
   const [loading, setLoading] = useState(false);
   const [fData, setFdata] = useState({title:'', content:'', categories:'', archived:false});
   useEffect(()=>{
-    fetch('http://localhost:4000/api/notas/'+params.id, {credentials:'include'})
+    fetch(BK_URL+'/api/notas/'+params.id, {credentials:'include'})
     .then(res=>res.json())
     .then(res=>{
       setFdata({
@@ -24,7 +25,7 @@ export const Task = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      let pet = await fetch('http://localhost:4000/api/notas/'+params.id, {credentials:'include', method:'PUT', body: JSON.stringify(fData), 
+      let pet = await fetch(BK_URL+'/api/notas/'+params.id, {credentials:'include', method:'PUT', body: JSON.stringify(fData), 
         headers:{
           'Content-Type':'application/json'
         }
@@ -42,7 +43,7 @@ export const Task = () => {
 
   const deleteNote = async ()=>{
     try {
-      let pet = await fetch("http://localhost:4000/api/notas/"+params.id, {method:'DELETE', credentials:'include'});
+      let pet = await fetch(BK_URL+"/api/notas/"+params.id, {method:'DELETE', credentials:'include'});
       if(pet.status >= 200 && pet.status < 300){
         alert('Deleted!');
         navigate(-1);

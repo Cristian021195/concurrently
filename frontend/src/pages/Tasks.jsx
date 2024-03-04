@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { MainLayout } from "../components/Layout"
 import { Card, NewCard, TitleLoader } from "../components/UI"
+const BK_URL = import.meta.env.VITE_BACKEND_URL;
 
 export const Tasks = () => {
     const [data, setData] = useState([]);
@@ -10,7 +11,7 @@ export const Tasks = () => {
     useEffect(()=>{
         setLoading(true);
         if(filter.categories == 'all'){
-            fetch('http://localhost:4000/api/notas/',{credentials:'include'})
+            fetch(BK_URL+'/api/notas/',{credentials:'include'})
             .then(res=>{
                 return res.json();
             })
@@ -18,7 +19,7 @@ export const Tasks = () => {
             .catch(err=>{console.log(err)})
             .finally(()=>{setLoading(false)})
         }else{
-            fetch(`http://localhost:4000/api/notas/filter/${filter.categories}/${filter.status}`,{credentials:'include'})
+            fetch(BK_URL+`/api/notas/filter/${filter.categories}/${filter.status}`,{credentials:'include'})
             .then(res=>{
                 return res.json();
             })
