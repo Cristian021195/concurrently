@@ -108,7 +108,7 @@ async function updateNota(req, res){
                 id,
                 UsuarioMail:mail
         }});
-        nota === null ? res.status(404).send({msg:"not found"}) : res.send({data:nota});        
+        nota === null ? res.status(404).send({msg:"not found"}) : res.send({data:nota});
     } catch (error) {
         res.status(500).send({msg:'not updated, err: '+error.message});
     }
@@ -169,7 +169,7 @@ async function getNotasByCategory(req,res){
 }
 
 async function addCategory(req,res){
-    const t = await sequelize.transaction();
+    const t = await sequelize.transaction({autocommit:false});
     const id = req.params.id;
     const {mail, category} = req.body;
 
@@ -180,7 +180,7 @@ async function addCategory(req,res){
         }}, {
             transaction: t
         })
-        let note_categories = nota.categories+", "+category;
+        let note_categories = nota.categories+","+category;
         const edited = await Notas.update({
             categories: note_categories
         }, {
@@ -199,10 +199,54 @@ async function addCategory(req,res){
         // If the execution reaches this line, an error was thrown.
         // We rollback the transaction.
         await t.rollback();
-        res.status(401).send({msg:'category not added'})
+        res.status(401).send({msg:'category not added'+error?.message})
     }
-
 }
+
+async function deleteCategory(req,res){
+    const t = await sequelize.transaction({autocommit:false});
+    const {mail} = req.body;
+    const {id, name} = req.params;
+    let nname = name?.toLowerCase();
+    try {
+        const nota = await Notas.findOne({where:{
+            id,
+            UsuarioMail:mail
+        }}, {
+            transaction: t
+        })
+        let note_categories = nota.categories;
+        let catarr = note_categories.split(',');
+        let narr = catarr.filter(e=>e!==nname)
+        let newcategories = narr.join(',');
+
+        const newnota = await Notas.update({
+            categories: newcategories
+        },
+        {
+            where:{
+                id,
+                UsuarioMail:mail
+            },
+            transaction:t
+        });
+
+        if(newnota === null){
+            await t.rollback();
+            res.status(401).send({msg:"couln't update"});
+        }else{
+            await t.commit();
+            res.send({msg:'category deleted'});
+        }        
+        
+    } catch (error) {
+        await t.rollback();
+        res.status(500).send({msg:'category not deleted: '+error?.message})
+        
+    }
+}
+
+
 
 module.exports = {
     getNotas,
@@ -215,5 +259,6 @@ module.exports = {
     getArchivedNotas,
     getUnarchivedNotas,
     getNotasByCategory,
-    addCategory
+    addCategory,
+    deleteCategory
 }

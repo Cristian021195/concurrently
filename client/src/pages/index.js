@@ -1,0 +1,6 @@
+export * from "./Home"
+export * from "./About"
+export * from "./Login"
+export * from "./Notes"
+export * from "./Tasks"
+export * from "./Task"

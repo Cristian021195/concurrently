@@ -1,5 +1,10 @@
 const express = require('express');
-const {notas_router, login_router, usuarios_router} = require('./router/');
+const {notas_router, login_router, usuarios_router, session_router} = require('./router/');
+const cors = require('cors');
+const cookies = require("cookie-parser");
+
+
+
 require('dotenv').config()
 
 const app = express();
@@ -8,10 +13,16 @@ app.listen(app.get("port"),()=>{
     console.log("En el puerto"+app.get("port"))
 })
 app.use(express.json());
+app.use(cors({
+    origin:"http://localhost:5173",
+    credentials: true
+}));
+app.use(cookies());
 
 app.use('/api/notas', notas_router);
 app.use('/api/login', login_router);
 app.use('/api/usuarios', usuarios_router);
+app.use('/api/session', session_router);
 //app.use('/api/login', login_router);
 
 
