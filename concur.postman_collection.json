@@ -1,0 +1,635 @@
+{
+	"info": {
+		"_postman_id": "81a2e2ec-b03d-4011-9778-11d32f0a1db1",
+		"name": "concur",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17282118"
+	},
+	"item": [
+		{
+			"name": "notas",
+			"item": [
+				{
+					"name": "notas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 15e1f59d3b9875ae1b036cc4eb02e719c22bc089fed4c19cebad016a6af3a78b7df21ae974c0b0d0e824261dccea775b9f81f1a3a84e11af81386abaa38e1823c73024c72e01f05eecaf5cba24a81142d85850de41a4f98eb978e587a11df3c04006c4c180b49c7c775779864403a5f1d55f4e0e6321801b73435edd822c929f",
+								"type": "text"
+							},
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDk1MTg3MTUsImRhdGEiOnsibWFpbCI6ImNyaXN0aWFuZ3JhbWFqbzAxNUBnbWFpbC5jb20ifSwiaWF0IjoxNzA5NTA0MzE1fQ.LbK-KsxeFZtU8eeoOWlbJvjT7eCPMUKoef64V-oaUGw",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/notas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"notas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "notas-filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 15e1f59d3b9875ae1b036cc4eb02e719c22bc089fed4c19cebad016a6af3a78b7df21ae974c0b0d0e824261dccea775b9f81f1a3a84e11af81386abaa38e1823c73024c72e01f05eecaf5cba24a81142d85850de41a4f98eb978e587a11df3c04006c4c180b49c7c775779864403a5f1d55f4e0e6321801b73435edd822c929f",
+								"type": "text"
+							},
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDk1MTg3MTUsImRhdGEiOnsibWFpbCI6ImNyaXN0aWFuZ3JhbWFqbzAxNUBnbWFpbC5jb20ifSwiaWF0IjoxNzA5NTA0MzE1fQ.LbK-KsxeFZtU8eeoOWlbJvjT7eCPMUKoef64V-oaUGw",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/notas/filter/normal/unarchived",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"notas",
+								"filter",
+								"normal",
+								"unarchived"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "archived",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 15e1f59d3b9875ae1b036cc4eb02e719c22bc089fed4c19cebad016a6af3a78b7df21ae974c0b0d0e824261dccea775b9f81f1a3a84e11af81386abaa38e1823c73024c72e01f05eecaf5cba24a81142d85850de41a4f98eb978e587a11df3c04006c4c180b49c7c775779864403a5f1d55f4e0e6321801b73435edd822c929f",
+								"type": "text"
+							},
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDk0ODQ3NjgsImRhdGEiOnsibWFpbCI6ImNyaXN0aWFuZ3JhbWFqbzAxNUBnbWFpbC5jb20ifSwiaWF0IjoxNzA5NDcwMzY4fQ.gEWfbgDisAQzk1kmgU5aQWZeRgMJIiZ9GfaGW4Z8C6w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/notas/unarchived/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"notas",
+								"unarchived",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unarchived",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 15e1f59d3b9875ae1b036cc4eb02e719c22bc089fed4c19cebad016a6af3a78b7df21ae974c0b0d0e824261dccea775b9f81f1a3a84e11af81386abaa38e1823c73024c72e01f05eecaf5cba24a81142d85850de41a4f98eb978e587a11df3c04006c4c180b49c7c775779864403a5f1d55f4e0e6321801b73435edd822c929f",
+								"type": "text"
+							},
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDk0ODQ3NjgsImRhdGEiOnsibWFpbCI6ImNyaXN0aWFuZ3JhbWFqbzAxNUBnbWFpbC5jb20ifSwiaWF0IjoxNzA5NDcwMzY4fQ.gEWfbgDisAQzk1kmgU5aQWZeRgMJIiZ9GfaGW4Z8C6w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/notas/unarchived/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"notas",
+								"unarchived",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nota",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 15e1f59d3b9875ae1b036cc4eb02e719c22bc089fed4c19cebad016a6af3a78b7df21ae974c0b0d0e824261dccea775b9f81f1a3a84e11af81386abaa38e1823c73024c72e01f05eecaf5cba24a81142d85850de41a4f98eb978e587a11df3c04006c4c180b49c7c775779864403a5f1d55f4e0e6321801b73435edd822c929f",
+								"type": "text"
+							},
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDk0ODQ3NjgsImRhdGEiOnsibWFpbCI6ImNyaXN0aWFuZ3JhbWFqbzAxNUBnbWFpbC5jb20ifSwiaWF0IjoxNzA5NDcwMzY4fQ.gEWfbgDisAQzk1kmgU5aQWZeRgMJIiZ9GfaGW4Z8C6w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/notas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"notas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 15e1f59d3b9875ae1b036cc4eb02e719c22bc089fed4c19cebad016a6af3a78b7df21ae974c0b0d0e824261dccea775b9f81f1a3a84e11af81386abaa38e1823c73024c72e01f05eecaf5cba24a81142d85850de41a4f98eb978e587a11df3c04006c4c180b49c7c775779864403a5f1d55f4e0e6321801b73435edd822c929f",
+								"type": "text"
+							},
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDk1MTg3MTUsImRhdGEiOnsibWFpbCI6ImNyaXN0aWFuZ3JhbWFqbzAxNUBnbWFpbC5jb20ifSwiaWF0IjoxNzA5NTA0MzE1fQ.LbK-KsxeFZtU8eeoOWlbJvjT7eCPMUKoef64V-oaUGw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/notas/category/normal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"notas",
+								"category",
+								"normal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-category",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 15e1f59d3b9875ae1b036cc4eb02e719c22bc089fed4c19cebad016a6af3a78b7df21ae974c0b0d0e824261dccea775b9f81f1a3a84e11af81386abaa38e1823c73024c72e01f05eecaf5cba24a81142d85850de41a4f98eb978e587a11df3c04006c4c180b49c7c775779864403a5f1d55f4e0e6321801b73435edd822c929f",
+								"type": "text"
+							},
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDk1MTg3MTUsImRhdGEiOnsibWFpbCI6ImNyaXN0aWFuZ3JhbWFqbzAxNUBnbWFpbC5jb20ifSwiaWF0IjoxNzA5NTA0MzE1fQ.LbK-KsxeFZtU8eeoOWlbJvjT7eCPMUKoef64V-oaUGw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/notas/1/category/normal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"notas",
+								"1",
+								"category",
+								"normal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 15e1f59d3b9875ae1b036cc4eb02e719c22bc089fed4c19cebad016a6af3a78b7df21ae974c0b0d0e824261dccea775b9f81f1a3a84e11af81386abaa38e1823c73024c72e01f05eecaf5cba24a81142d85850de41a4f98eb978e587a11df3c04006c4c180b49c7c775779864403a5f1d55f4e0e6321801b73435edd822c929f",
+								"type": "text"
+							},
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDk1MTg3MTUsImRhdGEiOnsibWFpbCI6ImNyaXN0aWFuZ3JhbWFqbzAxNUBnbWFpbC5jb20ifSwiaWF0IjoxNzA5NTA0MzE1fQ.LbK-KsxeFZtU8eeoOWlbJvjT7eCPMUKoef64V-oaUGw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\":\"study\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/notas/category/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"notas",
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 15e1f59d3b9875ae1b036cc4eb02e719c22bc089fed4c19cebad016a6af3a78b7df21ae974c0b0d0e824261dccea775b9f81f1a3a84e11af81386abaa38e1823c73024c72e01f05eecaf5cba24a81142d85850de41a4f98eb978e587a11df3c04006c4c180b49c7c775779864403a5f1d55f4e0e6321801b73435edd822c929f",
+								"type": "text"
+							},
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDk0ODQ3NjgsImRhdGEiOnsibWFpbCI6ImNyaXN0aWFuZ3JhbWFqbzAxNUBnbWFpbC5jb20ifSwiaWF0IjoxNzA5NDcwMzY4fQ.gEWfbgDisAQzk1kmgU5aQWZeRgMJIiZ9GfaGW4Z8C6w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/api/notas/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"notas",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 15e1f59d3b9875ae1b036cc4eb02e719c22bc089fed4c19cebad016a6af3a78b7df21ae974c0b0d0e824261dccea775b9f81f1a3a84e11af81386abaa38e1823c73024c72e01f05eecaf5cba24a81142d85850de41a4f98eb978e587a11df3c04006c4c180b49c7c775779864403a5f1d55f4e0e6321801b73435edd822c929f",
+								"type": "text"
+							},
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDk0ODM0MzMsImRhdGEiOnsibWFpbCI6ImNyaXN0aWFuZ3JhbWFqbzAxNUBnbWFpbC5jb20ifSwiaWF0IjoxNzA5NDY5MDMzfQ.-m5lss8toZvTY4ZGnqAHPs3GdOOOdW8R9qPDZzYTMtg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Nota #4\",\"content\":\"contenido\", \"category\":\"important\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/notas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"notas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 15e1f59d3b9875ae1b036cc4eb02e719c22bc089fed4c19cebad016a6af3a78b7df21ae974c0b0d0e824261dccea775b9f81f1a3a84e11af81386abaa38e1823c73024c72e01f05eecaf5cba24a81142d85850de41a4f98eb978e587a11df3c04006c4c180b49c7c775779864403a5f1d55f4e0e6321801b73435edd822c929f",
+								"type": "text"
+							},
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDk0ODM0MzMsImRhdGEiOnsibWFpbCI6ImNyaXN0aWFuZ3JhbWFqbzAxNUBnbWFpbC5jb20ifSwiaWF0IjoxNzA5NDY5MDMzfQ.-m5lss8toZvTY4ZGnqAHPs3GdOOOdW8R9qPDZzYTMtg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Nota #4\",\"content\":\"contenido\", \"category\":\"important\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/notas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"notas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "archive",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 15e1f59d3b9875ae1b036cc4eb02e719c22bc089fed4c19cebad016a6af3a78b7df21ae974c0b0d0e824261dccea775b9f81f1a3a84e11af81386abaa38e1823c73024c72e01f05eecaf5cba24a81142d85850de41a4f98eb978e587a11df3c04006c4c180b49c7c775779864403a5f1d55f4e0e6321801b73435edd822c929f",
+								"type": "text"
+							},
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDk0ODM0MzMsImRhdGEiOnsibWFpbCI6ImNyaXN0aWFuZ3JhbWFqbzAxNUBnbWFpbC5jb20ifSwiaWF0IjoxNzA5NDY5MDMzfQ.-m5lss8toZvTY4ZGnqAHPs3GdOOOdW8R9qPDZzYTMtg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/notas/archive/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"notas",
+								"archive",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unarchive",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 15e1f59d3b9875ae1b036cc4eb02e719c22bc089fed4c19cebad016a6af3a78b7df21ae974c0b0d0e824261dccea775b9f81f1a3a84e11af81386abaa38e1823c73024c72e01f05eecaf5cba24a81142d85850de41a4f98eb978e587a11df3c04006c4c180b49c7c775779864403a5f1d55f4e0e6321801b73435edd822c929f",
+								"type": "text"
+							},
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDk0ODM0MzMsImRhdGEiOnsibWFpbCI6ImNyaXN0aWFuZ3JhbWFqbzAxNUBnbWFpbC5jb20ifSwiaWF0IjoxNzA5NDY5MDMzfQ.-m5lss8toZvTY4ZGnqAHPs3GdOOOdW8R9qPDZzYTMtg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/notas/unarchive/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"notas",
+								"unarchive",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mail\":\"cristiangramajo015@gmail.com\",\r\n    \"password\":\"021195cd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "usuarios",
+			"item": [
+				{
+					"name": "crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Doe John \",\r\n    \"mail\":\"doejohn@ensolvers.com\",\r\n    \"password\":\"ensolversdj\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/usuarios/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"usuarios",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
