@@ -94,14 +94,14 @@ async function createNota(req, res){
 
 
 async function updateNota(req, res){
-    const {title, content, category, mail} = req.body;
+    const {title, content, categories, mail, archived} = req.body;
     const id = req.params.id;
-    console.log(id);
     try {
         const nota = await Notas.update({
             title: title ? title : null,
             content: content ? content : null,
-            category: category ? category : null
+            categories: categories ? categories : null,
+            archived: archived
         },
         {
             where:{
@@ -245,6 +245,25 @@ async function deleteCategory(req,res){
         
     }
 }
+async function getNotasFilters(req, res){
+    let category = req.params.category;
+    let status = req.params.status === 'archived' ? true : false;
+    const {mail} = req.body;
+    try {
+        const notas = await Notas.findAll({
+            where:{
+                UsuarioMail:mail,
+                archived: status,
+                categories: {
+                    [Op.like] : `%${category}%`
+                }
+            }});
+        res.send({data:notas});
+    } catch (error) {
+        console.log("MI ERROR: ",error)
+        res.status(500).send({msg:'no creada'});
+    }
+}
 
 
 
@@ -260,5 +279,6 @@ module.exports = {
     getUnarchivedNotas,
     getNotasByCategory,
     addCategory,
-    deleteCategory
+    deleteCategory,
+    getNotasFilters
 }

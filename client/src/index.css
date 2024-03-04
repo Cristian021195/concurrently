@@ -34,10 +34,11 @@ ul li a:active{color: black;}
 .d-block{display: block;}
 .justify-content-center{justify-content: center;}
 .justify-content-between{justify-content: space-between;}
+.justify-content-end{justify-content: end;}
 .align-items-center{align-items: center;}
 .align-content-center{align-content: center;}
 .center-all{display: flex;justify-content: center; align-items: center; align-content: center;}
-main{background-color: #FFFDE7; height: 100vh;}
+main{height: 100vh;}
 .input{font-size: 1rem; width: 100%; margin: 1rem 0 1rem 0; border-radius: 0.25rem; border: none;}
 button[type="submit"]{font-size: 1.25rem;}
 h1{text-align: center;}
@@ -47,6 +48,7 @@ form{
   background-color: #FFF9C4;
   border: solid 1px #CFD8DC;
 }
+.login{ max-width: 20rem; }
 .btn{
   all: unset;
   border-radius: 0.4rem;
@@ -73,8 +75,22 @@ form{
   max-width: 14rem;
   height: 10rem;
 }
+.new-card{
+  background-color: #CFD8DC;
+  margin-top: 1rem;
+  width: 10rem!important;
+  height: 10rem!important;
+}
 .card-title::first-letter{
   text-transform: uppercase;
+}
+.form{
+  min-width: 20rem;
+  max-width: 40rem;
+}
+textarea{
+  border: none;
+  width: 100%;
 }
 .select{
   font-size: 1.2rem;

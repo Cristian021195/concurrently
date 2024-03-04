@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { PrivateHeader } from '../components/Layout'
-import { About, Home, Task, Tasks } from '../pages'
-import { LogOut } from '../pages/LogOut'
+import { About, Home, Task, Tasks, LogOut, NewTask} from '../pages'
 
 export const PrivateRouter = () => {
   return (
@@ -14,6 +13,7 @@ export const PrivateRouter = () => {
             <Route path='/logout' element={<LogOut/>}></Route>
             <Route path='/tasks' element={<Tasks/>}></Route>
             <Route path='/tasks/:id' element={<Task/>}></Route>
+            <Route path='/tasks/new' element={<NewTask/>}></Route>
       </Routes>
     </BrowserRouter>
   )

@@ -9,8 +9,16 @@ export const LogOut = () => {
             <h2>¿Exit?</h2>
           </div>
           <div className="d-flex justify-content-center gap-1 p-1">
-            <button className="btn bg-orange" onClick={()=>{
-              document.cookie = 'token=; domain=localhost:5173; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            <button className="btn bg-orange" onClick={async ()=>{
+              try{
+                let pet = await fetch('http://localhost:4000/api/session/logout', {method:'POST', credentials:'include'});
+                if(pet.status >= 200 && pet.status < 300){
+                  document.cookie = 'token=; Path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+                  window.location.href = window.location.origin;
+                }
+              }catch(err){
+                console.log(err);
+              }
             }}>Yes</button>
             <Link to={'/home'} className="btn bg-dark">No</Link>
           </div>

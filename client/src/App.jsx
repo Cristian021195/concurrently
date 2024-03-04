@@ -4,20 +4,13 @@ import {
   PublicRouter,
    PrivateRouter 
 } from "./router"
+import { useSession } from "./hooks/useSession"
 
 function App() {
-  const [loginStatus, setLoginStatus] = useState(false);
-  useEffect(()=>{
-    fetch('http://localhost:4000/api/session', {credentials: 'include'})
-    .then(res=>{
-      if(res.status >= 200 && res.status < 300){
-        setLoginStatus(true);
-      }
-    })
-  },[])
+  const {loginStatus, setLoginStatus} = useSession();
   return (
     <div>
-      {loginStatus ? <PrivateRouter/> : <PublicRouter/>}      
+      {loginStatus === true ? <PrivateRouter/> : <PublicRouter/>}      
     </div>
   )
 }

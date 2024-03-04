@@ -15,7 +15,7 @@ async function login(req, res){
 
                 let token = sign({exp: Math.floor(Date.now() / 1000) + 60 * 60 * 4,data: {mail: usuarios.mail}},process.env.SIGN);
                 if(token){
-                    res.cookie('token', token, {httpOnly:true});
+                    res.cookie('token', token, {httpOnly:true, expires: new Date(Date.now() + 60000 * 60 * 4)});
                     res.send({msg:'login ok', token});
                 }else{
                     throw new Error("Error al generar token");

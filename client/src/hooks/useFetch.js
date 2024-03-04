@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
-export function useFetch(url, customHeader = {}) {
+export function useFetch(url, customHeader = {}, config={}) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     setLoading(true);
-    fetch(url, {headers: {'Content-Type':'application/json', ...customHeader}})
+    fetch(url, {headers: {'Content-Type':'application/json', ...customHeader}, ...config})
     .then(res=>res.json())
     .then((response) => {
         setData(response.data);

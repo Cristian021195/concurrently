@@ -15,7 +15,7 @@ export const PrivateHeader = () => {
             <NavLink className={({isActive}) => isActive ? "active" : ""} to="/logout">Logout</NavLink>
           </li>
           <li>
-            <NavLink className={({isActive}) => isActive ? "active" : ""} to="/tasks">Taks</NavLink>
+            <NavLink className={({isActive}) => isActive ? "active" : ""} to="/tasks">Tasks</NavLink>
           </li>
         </ul>
       </nav>
