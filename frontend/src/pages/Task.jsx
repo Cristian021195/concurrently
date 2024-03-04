@@ -59,20 +59,21 @@ export const Task = () => {
         <form className="form" onSubmit={handleSubmit}>
           <div>{errors}</div>
           <label htmlFor="title">Title</label>
-          <input type="text" name="title" id="title" className="input" placeholder="Titulo" minLength={5} maxLength={50} required
+          <input type="text" name="title" id="title" className="input p-05" placeholder="Titulo" minLength={5} maxLength={50} required
             onChange={(e)=>{ setFdata({...fData, title:e.target.value}) }}  defaultValue={fData.title}/>
           <label htmlFor="archived">Archived: </label>
           <input type="checkbox" name="archived" id="archived" checked={fData.archived} onChange={(e)=>{
               setFdata({...fData, archived: e.target.checked})}
           }/>
           <label htmlFor="content">Content: </label>
-          <textarea name="content" id="content" rows="10" maxLength={512} minLength={5} required defaultValue={fData.content}
+          <textarea name="content"  className="p-05" id="content" rows="10" maxLength={512} minLength={5} required defaultValue={fData.content}
             onChange={(e)=>{ setFdata({...fData, content:e.target.value})}}></textarea>
           <label htmlFor="category">Category: </label>
           <div className="d-flex">
             <p>&nbsp;Categories (max: 3): {fData.categories}</p>
           </div>
           <div className="d-flex justify-content-between m-1">
+            <button type="button" className="btn bg-dark" disabled={loading} onClick={()=>{navigate(-1)}}>Back</button>
             <button type="submit" className="btn bg-orange" disabled={loading}>{loading ? 'Loading...' : 'Save'}</button>
             <button type="button" className="btn bg-dark" disabled={loading} onClick={()=>{deleteNote(params.id)}} >{loading ? 'Loading...' : 'Delete'}</button>
           </div>

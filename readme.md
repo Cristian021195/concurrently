@@ -1,9 +1,2 @@
-"name":"John Doe",
-"mail":"johndoe@ensolvers.com",
-"password":"ensolversjd"
+# Ensolvers Challenge
 
-"name":"Doe John ",
-"mail":"doejohn@ensolvers.com",
-"password":"ensolversdj"
-
-env SIGN=HASH95BRO

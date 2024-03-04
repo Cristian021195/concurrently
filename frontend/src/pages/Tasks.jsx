@@ -29,8 +29,8 @@ export const Tasks = () => {
     },[filter])
     return (
         <MainLayout title="Tasks">
-            <form className="d-flex justify-content-end">
-                <label htmlFor="categories">Categories</label>
+            <form className="d-flex justify-content-end flex-wrap">
+                <label htmlFor="categories">Categories
                 <select className="select" name="categories" id="categories" onChange={(e)=>{
                     setFilter({...filter, categories:e.target.value})
                 }}>
@@ -49,18 +49,20 @@ export const Tasks = () => {
                     <option value="events">#events</option>
                     <option value="memory">#memory</option>
                 </select>
-                <label htmlFor="status">Status</label>
+                </label>
+                <label htmlFor="status">Status
                 <select className="select" name="status" id="status" onChange={(e)=>{
                     setFilter({...filter, status:e.target.value})
                 }}>
                     <option value="unarchived">unarchived (default)</option>
                     <option value="archived">archived</option>
                 </select>
+                </label>
             </form>
             <div className="">
                 {
                     loading ? <TitleLoader/>
-                    :   <div className="d-flex gap-1">
+                    :   <div className="d-flex gap-1 full">
                             <NewCard/>
                             {
                                 data.length === 0 ? 

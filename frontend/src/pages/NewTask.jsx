@@ -1,11 +1,13 @@
 import { useState } from "react"
 import { MainLayout } from "../components/Layout"
+import { useNavigate } from "react-router-dom";
 export const NewTask = () => {
   const [fData, setFdata] = useState({title:'Titulo', content:'Contenido...', category:'important'});
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState("");
   const [categories, setCategories] = useState(['important']);
   const [currentCat, setCurrentCat] = useState("important");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,10 +36,10 @@ export const NewTask = () => {
         <form className="form" onSubmit={handleSubmit}>
           <div>{errors}</div>
           <label htmlFor="title">Title</label>
-          <input type="text" name="title" id="title" className="input" placeholder="Titulo" minLength={5} maxLength={50} required
+          <input type="text" name="title" id="title" className="input p-05" placeholder="Titulo" minLength={5} maxLength={50} required
           onChange={(e)=>{ setFdata({...fData, title:e.target.value}) }}  defaultValue={fData.title}/>
           <label htmlFor="content">Content: </label>
-          <textarea name="content" id="content" rows="10" maxLength={512} minLength={5} required defaultValue={fData.content}
+          <textarea className="p-05" name="content" id="content" rows="10" maxLength={512} minLength={5} required defaultValue={fData.content}
           onChange={(e)=>{ setFdata({...fData, content:e.target.value}) }}  ></textarea>
           <label htmlFor="category">Category: </label>
           <div className="d-flex">
@@ -68,7 +70,8 @@ export const NewTask = () => {
             <p>&nbsp;Categories (max: 3): {categories?.join(',')}</p>
           </div>
           
-          <div className="center-all">
+          <div className="d-flex justify-content-between mt-1">
+            <button type="button" className="btn bg-dark" disabled={loading} onClick={()=>{navigate(-1)}}>Back</button>
             <button type="submit" className="btn bg-orange" disabled={loading}>{loading ? 'Loading...' : 'Save'}</button>
           </div>
         </form>

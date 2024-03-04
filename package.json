@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "npm run dev --prefix client",
-    "srv": "nodemon ./backend/app.js",
-    "dev": "concurrently \"npm run client\" \"npm run srv\""
+    "frontend": "npm run dev --prefix frontend",
+    "backend": "nodemon ./backend/app.js",
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\""
   },
   "keywords": [],
   "author": "",
